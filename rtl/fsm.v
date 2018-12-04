@@ -26,6 +26,8 @@ module fsm
    					alu_8,
    					alu_9,
    					alu_10,
+   					mem_add1
+   					mem_add2
    			
    					
    output reg [1:0] mux_1,
@@ -98,7 +100,8 @@ module fsm
            alu_5 <=1
  		   alu_6 <=0;
            alu_7 <=0;
-
+           mem_add1<=1;
+           mem_add2<=2;
    
            
          
@@ -107,8 +110,9 @@ module fsm
            mux_4 <= 3;
            mem_we <=1;
            alu_1 <=0; 
-
            alu_3 <=0;
+           mem_add1<=3;
+           mem_add2<=4;
            
          
         end
