@@ -9,7 +9,7 @@
 
 module alu
   (input signed [31:0] a, b,
-   input [2:0]              op,
+   input [1:0]              op,
    output reg signed [31:0] result
    );
 
