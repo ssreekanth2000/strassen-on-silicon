@@ -13,7 +13,7 @@ module matmult1
 
    reg [31:0]    b22PlusB11, b11PlusB12, b21PlusB22;
    always @* begin
-      b22PlusB11 = b11 + b11;
+      b22PlusB11 = b22 + b11;
       b11PlusB12 = b11 + b12;
       b21PlusB22 = b21 + b22;
    end
@@ -67,11 +67,11 @@ module matmult1
    mux4way mux3
      (
       .out(mux3Out),
-      .sel(mux3Sel),
+      .sel(mux4Sel),
       .in0(a21),
       .in1(b11),
-      .in2(m4),
-      .in3(m4)
+      .in2(m1),
+      .in3(m6)
       );
 
    mux mux4
@@ -106,8 +106,8 @@ module matmult1
       .sel(mux3Sel),
       .in0(b21),
       .in1(a22),
-      .in2(m5),
-      .in3(m5)
+      .in2(m2),
+      .in3(m2)
       );
 
    mux mux8
@@ -118,12 +118,14 @@ module matmult1
       .in1(m4)
       );
 
-   mux mux9
+   mux4way mux9
      (
       .out(mux9Out),
-      .sel(mux2Sel),
+      .sel(mux3Sel),
       .in0(a11),
-      .in1(b22)
+      .in1(b22),
+      .in2(m7),
+      .in3(m7)
       );
 
    mux mux10
@@ -134,12 +136,14 @@ module matmult1
       .in1(m5)
       );
 
-   mux mux11
+   mux4way mux11
      (
       .out(mux11Out),
-      .sel(mux2Sel),
+      .sel(mux3Sel),
       .in0(a21),
-      .in1(m6)
+      .in1(m6),
+      .in2(m6),
+      .in3(m6)
       );
 
    mux4way mux12
@@ -230,16 +234,16 @@ module matmult1
      (
       .out(dIn1),
       .sel(memMuxCtrl),
-      .in0(m3),
-      .in1(m1)
+      .in0(alu3Out),
+      .in1(alu1Out)
       );
 
    mux dInMux2
      (
       .out(dIn2),
       .sel(memMuxCtrl),
-      .in0(m4),
-      .in1(m2)
+      .in0(alu4Out),
+      .in1(alu2Out)
       );
 
    wire [1:0]   addr1, addr2;

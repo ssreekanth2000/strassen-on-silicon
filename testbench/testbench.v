@@ -24,6 +24,9 @@ module testbench();
       );
 
    initial begin
+      $dumpfile("test.vcd");
+      $dumpvars();
+      #1 clk = !clk;
       #1 clk = !clk;
       #1 clk = !clk;
       #1 clk = !clk;
@@ -32,5 +35,6 @@ module testbench();
       #1 clk = !clk;
       #1 clk = !clk;
       $display("%d %d %d %d", c11, c12, c21, c22);
+      $finish;
    end
 endmodule
