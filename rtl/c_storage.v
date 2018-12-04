@@ -29,14 +29,18 @@ module c_storage
     output [width-1:0] c4
     );
 
-   reg [width-1:0]     mem [2:0];
+   reg [width-1:0]     mem [3:0];
 
    always @(posedge clk) begin
       if (we)
         begin
-           addr1 <= dIn1;
-           addr2 <= dIn2;
+           mem[addr1] <= dIn1;
+           mem[addr2] <= dIn2;
         end
-      {c1, c2, c3, c4} <= mem;
+      // {c1, c2, c3, c4} <= mem;
    end
+   assign c1 = mem[0],
+     c2 = mem[1],
+     c3 = mem[2],
+     c4 = mem[3];
 endmodule

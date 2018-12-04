@@ -6,12 +6,12 @@
 
 module matmult1
   (
-   input        clk,
-   input [31:0] a11, a12, a21, a22, b11, b12, b21, b22,
-   output       c11, c12, c21, c22
+   input         clk,
+   input [31:0]  a11, a12, a21, a22, b11, b12, b21, b22,
+   output [31:0] c11, c12, c21, c22
    );
 
-   reg [31:0]   b22PlusB11, b11PlusB12, b21PlusB22;
+   reg [31:0]    b22PlusB11, b11PlusB12, b21PlusB22;
    always @* begin
       b22PlusB11 = b11 + b11;
       b11PlusB12 = b11 + b12;
@@ -224,7 +224,7 @@ module matmult1
       .result(alu7Out)
       );
 
-   wire [31:0]   dIn1, dIn2;
+   wire [31:0]  dIn1, dIn2;
 
    mux dInMux1
      (
@@ -242,22 +242,22 @@ module matmult1
       .in1(m2)
       );
 
-   wire [1:0]    addr1, addr2;
+   wire [1:0]   addr1, addr2;
 
-   mux addrMux1
+   mux #(.width(2)) addrMux1
      (
       .out(addr1),
       .sel(memMuxCtrl),
-      .in0(1),
-      .in1(0)
+      .in0(2'h1),
+      .in1(2'h0)
       );
 
-   mux addrMux2
+   mux #(.width(2)) addrMux2
      (
       .out(addr2),
       .sel(memMuxCtrl),
-      .in0(2),
-      .in1(3)
+      .in0(2'h2),
+      .in1(2'h3)
       );     
 
    c_storage cMem
