@@ -61,6 +61,13 @@ int main(int argc, char** argv)
           printf("Was [[%d, %d], [%d, %d]]\n", dut.c11, dut.c12, dut.c21, dut.c22);
           success = false;
         }
+          std::cout << a << std::endl;
+          std::cout << "x" << std::endl;
+          std::cout << b << std::endl;
+          std::cout << "=" << std::endl;
+          printf("[[%d, %d], [%d, %d]]\n\n", dut.c11, dut.c12, dut.c21, dut.c22);
+          std::cout << "---" << std::endl<<std::endl;
+
     }
 
   printf("Success: %d, 1 means success\n", success);
