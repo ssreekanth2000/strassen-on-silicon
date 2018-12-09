@@ -20,6 +20,8 @@ Therefore, we designed hardware to multiply 2x2 matrices which can be used as a 
 
 # How
 
+![alt text](https://github.com/ssreekanth2000/strassen-on-silicon/blob/master/Untitled%20Diagram.png)
+
 We began by attempting to create a full matrix multiplication circuit.
 However, we quickly realized that because Strassen's algorithm recursively does block matrix multiplication until numbers are reached, we needed to create the basic 2x2 multiplication unit.
 From there, we counted the amount of arithmetic operations and attempted to optimize gate cost and clock cycles.
@@ -39,6 +41,7 @@ This ISA would require a type of instruction which could access 8 registers at o
 Instead we chose to optimize our basic 2x2 multiplier and analyze the arithmetic complexity with math.
 
 # Further Work
+
 The next steps in this process could include the following things:
 
 - General code to process (non 2x2) any matrices.
@@ -51,6 +54,7 @@ The next steps in this process could include the following things:
 
   - There are algorithms which are built to make multiplication of matrices whose elements are mainly zeros.
     We can optimize hardware for those algorithms.
+
 - Eigenvectors:
   Optimizing hardware to find the eigenvectors of matrices seems really interesting.
 
