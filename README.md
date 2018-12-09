@@ -11,10 +11,10 @@ Hence, it is sufficient to just test a random sample of 512 possible matrix equa
 
 # Performance
 
-Suppose that we had a single process with Strassen's algorithm, assuming the matrices are square and dimensions that a power of 2.
+Suppose that we had a single process with Strassen's algorithm, assuming the matrices are square and have dimensions that are a power of 2.
 Single threaded Strassen would require 25 cycles.
 10-threaded Strassen could require 4 cycles.
-Single threaded
+
 
 ## Our design
 
