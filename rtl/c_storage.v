@@ -1,15 +1,16 @@
 /*
- Module memory
+ Module c_storage
  
- Inputs: clk, addr1, addr2, instrAddr, we, dIn1, dIn2
- Outputs: dOut, instrOut
+ Inputs: clk, addr1, addr2, we, dIn1, dIn2
+ Outputs: c1, c2, c3, c4
  Function:
- dOut = mem[addr]
- instrOut = mem[instrAddr]
- if we then mem[addr] = din.
- Comments: This is made to the MIPS spec, so the width is a byte and
- aword is 4 bytes i.e data in and data out are 32 bits, which span 4
- bytes.
+ c1 = mem[0]
+ c2 = mem[1]
+ c3 = mem[2]
+ c4 = mem[3]
+ if we:
+   mem[addr1] = dIn1
+   mem[addr2] = dIn2
  */
 
 module c_storage

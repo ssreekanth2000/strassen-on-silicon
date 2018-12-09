@@ -12,14 +12,15 @@ int main(int argc, char** argv)
 
   bool success = true;
 
+  // Generate 512 test cases
   for (auto i = 0; i < 512; i++)
     {
       Vmatmult1 dut;
       std::vector<int> nums;
+      // Populate test case arguments with random numbers which do not cause int overflow.
       for (auto j = 0; j < 8; j++)
-        nums.push_back(rand() % (int) pow(2, 15));
+        nums.push_back((rand() % (int) pow(2, 15)) - pow(2, 14));
       
-
       dut.a11 = nums[0];
       dut.a12 = nums[1];
       dut.a21 = nums[2];
@@ -29,12 +30,14 @@ int main(int argc, char** argv)
       dut.b21 = nums[6];
       dut.b22 = nums[7];
 
-      Eigen::Matrix2d a, b, c;
+      // Generate expected result
+      Eigen::Matrix2d a, b;
       a << nums[0], nums[1], nums[2], nums[3];
       b << nums[4], nums[5], nums[6], nums[7];
 
-      c = a * b;
+      const auto c = a * b;
 
+      // The operation takes 4 cycles
       for (auto j = 0; j < 4; j++)
         {
           dut.clk = 0;
@@ -43,10 +46,11 @@ int main(int argc, char** argv)
           dut.eval();
         }
 
-      if (dut.c11 != c(0, 0)
-          || dut.c12 != c(0, 1)
-          || dut.c21 != c(1, 0)
-          || dut.c22 != c(1, 1))
+      // Report errors
+      if (dut.c11 != (int) c(0, 0)
+          || dut.c12 != (int) c(0, 1)
+          || dut.c21 != (int) c(1, 0)
+          || dut.c22 != (int) c(1, 1))
         {
           std::cout << "Failed on:" << std::endl;
           std::cout << a << std::endl;
@@ -58,5 +62,6 @@ int main(int argc, char** argv)
           success = false;
         }
     }
-  printf("Success: %d\n", success);
+
+  printf("Success: %d, 1 means success\n", success);
 }

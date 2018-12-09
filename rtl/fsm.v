@@ -1,8 +1,10 @@
-/**
- * Module FSM
- * Inputs: clock (clk), equality boolean (eq), command (cmd).
- * Outputs: Control signals for the multicycle CPU.
- * Function: Output the control signals for the multicycle CPU.
+/*
+ Module FSM
+ Inputs: clock (clk)
+ Outputs: Control signals for the multicycle CPU.
+ Function: Output the control signals for the multicycle matrix multiplier.
+ Comments: Muxes are planned out such that the required selector bit
+ is equivalent to the state number.
  */
 
 module fsm
