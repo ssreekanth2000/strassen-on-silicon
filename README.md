@@ -18,7 +18,7 @@ Single threaded Strassen would require 25 cycles.
 
 ## Our design
 
-![alt text](https://github.com/concavegit/multicycle-mips/blob/master/Untitled%20Diagram.png)
+![alt text](https://github.com/ssreekanth2000/strassen-on-silicon/blob/master/Untitled%20Diagram.png)
 
 ### FSM
 - 4 states with free reset logic if implemented with counter
@@ -28,7 +28,7 @@ Single threaded Strassen would require 25 cycles.
 
 ### Circuit
 - 7 multipliers
-- 6 adders
+- 9 adders
 - 6 subractors
 
 - 7 2-way muxes
