@@ -18,6 +18,8 @@ Single threaded Strassen would require 25 cycles.
 
 ## Our design
 
+![alt text](https://github.com/concavegit/multicycle-mips/blob/master/Untitled%20Diagram.png)
+
 ### FSM
 - 4 states with free reset logic if implemented with counter
 - 12 outputs
