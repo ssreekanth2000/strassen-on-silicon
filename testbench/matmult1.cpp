@@ -12,7 +12,7 @@ int main(int argc, char** argv)
 
   bool success = true;
 
-  for (auto i = 0; i < 8; i++)
+  for (auto i = 0; i < 512; i++)
     {
       Vmatmult1 dut;
       std::vector<int> nums;

@@ -2,6 +2,9 @@
 CA FA18 Lab 5 
 
 # Running the testbench
+The unit does not handle carries or overflows.
+Hence, it is sufficient to just test a random sample of 512 possible matrix equations, as edge cases such as overflows need not to be tested.
+
 - `cd testbench`
 - `make`
 - `make run`
