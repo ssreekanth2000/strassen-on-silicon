@@ -1,6 +1,11 @@
 # strassen-on-silicon
 CA FA18 Lab 5 
 
+# Running the testbench
+- `cd testbench`
+- `make`
+- `make run`
+
 # Performance
 
 Suppose that we had a single process with Strassen's algorithm, assuming the matrices are square and dimensions that a power of 2.
