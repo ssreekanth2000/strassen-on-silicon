@@ -65,8 +65,7 @@ The software would require plugging our unit into a CPU, which would also requir
 This ISA would require a type of instruction which could access 8 registers at once, at which point the focus of the project will shift to designing a custom computer architecture, rather than matrix multiplication.
 Instead we chose to optimize our basic 2x2 multiplier and analyze the arithmetic complexity with math.
 
-One difficulty we faced throughout the project was all the different numbers thrown around on the internet regarding addition vs mult
-iplication. There was this huge variation in answers as this tradeoff depended a lot on many very variable factors including how many threads are on the CPU you run? How pipelined is your hardware? What are the things you are multiplying? This meant it was quite difficult for us to come up with accurate metrics and in the end we had to go with numbers for the algorithm as a whole instead of being able to decribe every operation.
+One difficulty we faced throughout the project was all the different numbers thrown around on the internet regarding addition vs multiplication. There was this huge variation in answers as this tradeoff depended a lot on many very variable factors including how many threads are on the CPU you run? How pipelined is your hardware? What are the things you are multiplying? This meant it was quite difficult for us to come up with accurate metrics and in the end we had to go with numbers for the algorithm as a whole instead of being able to decribe every operation.
 
 
 
