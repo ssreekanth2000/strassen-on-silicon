@@ -53,3 +53,17 @@ The next steps in this process could include the following things:
     We can optimize hardware for those algorithms.
 - Eigenvectors:
   Optimizing hardware to find the eigenvectors of matrices seems really interesting.
+
+# Reflection
+
+We headed into the project with the goal to optimize for matrix multiplication with a loose idea of what algorithm to use.
+We had planned to build hardware and software optimized for a 2x2 matrix initially and then scale it but as we learnt more of the Strassen’s algorithm we realized taking the 2x2 as a base and optimizing for performance was the way to go.
+We adjusted our work plan accordingly.
+
+Besides the advantage of having a versatile optimized base, multiplication of larger matrices (excluding caching) is purely a software task.
+The software would require plugging our unit into a CPU, which would also require a new ISA.
+This ISA would require a type of instruction which could access 8 registers at once, at which point the focus of the project will shift to designing a custom computer architecture, rather than matrix multiplication.
+Instead we chose to optimize our basic 2x2 multiplier and analyze the arithmetic complexity with math.
+
+As a whole we were satisfied with what were able to accomplish and understand.
+We could very clearly see the advantages of Application Specific Integrated Circuits (ASICs) for tasks which regular CPUs are very clearly not built for.
