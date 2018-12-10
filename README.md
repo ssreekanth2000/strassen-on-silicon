@@ -9,6 +9,8 @@ Hence, it is sufficient to just test a random sample of 512 possible matrix equa
 - `make`
 - `make run`
 
+Since Eigen is used to check the results of matrix multiplication, you might need to edit `/testbench/Makefile` to include your installation of it or the include path in `/testbench/matmult1.cpp`.
+
 # Performance
 
 Suppose that we had a single process with Strassen's algorithm, assuming the matrices are square and have dimensions that are a power of 2.
