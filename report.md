@@ -66,7 +66,7 @@ We headed into the project with the goal to optimize for matrix multiplication w
 We had planned to build hardware and software optimized for a 2x2 matrix initially and then scale it but as we learnt more of the Strassen’s algorithm we realized taking the 2x2 as a base and optimizing for performance was the way to go.
 We adjusted our work plan accordingly.
 
-Besides the advantage of having a versatile optimized base, multiplication of larger matrices (excluding caching) is purely software task and not be a great extension for a computer architecture final project. We instead chose to focus our effortss in optimzing the hardware design on the 2x2 multiplication module and analyse the aritchmatic complexity with math
+Besides the advantage of having a versatile optimized base, multiplication of larger matrices (excluding caching) is purely software task and not be a great extension for a computer architecture final project. We instead chose to focus our efforts in optimzing the hardware design on the 2x2 multiplication module and analyse the aritchmatic complexity with math
 
 
 One difficulty we faced throughout the project was all the different numbers thrown around on the internet regarding addition vs multiplication. There was this huge variation in answers as this tradeoff depended a lot on many very variable factors including how many threads are on the CPU you run? How pipelined is your hardware? What are the things you are multiplying? This meant it was quite difficult for us to come up with accurate metrics and in the end we had to go with numbers for the algorithm as a whole instead of being able to decribe every operation.
