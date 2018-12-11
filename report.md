@@ -17,12 +17,13 @@ In python, libraries such as SciPy leverage algorithms such as the ones in BLAS 
 This opens the door for other libraries such as OpenCV so that self driving cars can be realized, and tensorflow and scikit-learn so that search engines can deliver optimal results.
 In modern developments, the influence of matrix operations cannot be understated.
 Therefore, we designed hardware to multiply 2x2 matrices which can be used as a kernel for larger recursive matrix multiplication.
+We chose Strassen's algorithm because it has served as an inspiration to BLAS and LAPACK (https://www.quora.com/Does-the-LAPACK-GEMM-general-matrix-matrix-multiplication-routine-use-the-Strassen-O-N-2-8-algorithm-or-the-traditional-O-N-3-technique)
 
 # How
 
 ![alt text](https://github.com/ssreekanth2000/strassen-on-silicon/blob/master/Untitled%20Diagram.png)
 
-We began by attempting to create a full matrix multiplication circuit.
+We began by attempting to create a full matrix multiplication circuit to carry out the methodology described in (https://en.wikipedia.org/wiki/Matrix_multiplication#Algorithms_for_efficient_matrix_multiplication).
 However, we quickly realized that because Strassen's algorithm recursively does block matrix multiplication until numbers are reached, we needed to create the basic 2x2 multiplication unit.
 From there, we counted the amount of arithmetic operations and attempted to optimize gate cost and clock cycles.
 By optimizing gate cost, we were able to use 7 arithmetic units capable of addition, subtraction, and multiplication in 5 cycles.
