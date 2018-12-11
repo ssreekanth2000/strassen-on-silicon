@@ -35,6 +35,9 @@ Since there are 7 multiplications to be done, using feedback loops only 7 DFFs a
 We also only needed a storage unit of depth 4 to hold the 4 output matrix elements.
 Due to the design of our multiplier, two elements of the output matrix are calculated on the 3rd cycle, and the last two are calculated on the 4th cycle.
 Therefore, our storage unit needed only two address and data inputs and a single write enable.
+Our code is similar to the above figure.
+We number the ALUs, muxes, and DFFs in descending order with ALU1 being connected to DFF1 which computes M1 and so on.
+This is an important detail as it makes tracing through the code easy.
 
 Caching aside, multiplication of larger matrices is purely a software task.
 The software would require plugging our unit into a CPU, which would also require a new ISA.
