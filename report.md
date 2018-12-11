@@ -38,6 +38,8 @@ Therefore, our storage unit needed only two address and data inputs and a single
 Caching aside, multiplication of larger matrices is purely a software task.
 The software would require plugging our unit into a CPU, which would also require a new ISA.
 This ISA would require a type of instruction which could access 8 registers at once, at which point the focus of the project will shift to designing a custom computer architecture, rather than matrix multiplication.
+Or this would take multiple cycles and be implemented in Assembly similarly to that present in `/testbench/assem`.
+Since the hardware is optimized for 2x2 multiplication as a base, we focused our assembly code on that.
 Instead we chose to optimize our basic 2x2 multiplier and analyze the arithmetic complexity with math.
 
 # Further Work
